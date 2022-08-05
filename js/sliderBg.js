@@ -4,18 +4,16 @@ function getRandomNum() {
     randNumb = Math.ceil(Math.random() * 20);
 }
 getRandomNum();
+// document.body.style.backgroundImage = "url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/evening/18.jpg')";
+
 
 function setBg() {
     let timeOfDay = getTimeOfDay(hours);
     let bgNum = String(randNumb).length === 1 ? String(randNumb).padStart(2, 0) : String(randNumb);
+    if (timeOfDay === 'day') timeOfDay = 'afternoon';
     document.body.style.backgroundImage = `url('https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg')`;
-    // const img = new Image();
-    // img.src = // здесь ваш код 
-    // img.onload = () => {      
-    //     body.style.backgroundImage = // здесь тоже ваш код
-    // }; 
 }
-setBg()
+setBg();
 
 function getSlideNext() {
     randNumb +=1;
