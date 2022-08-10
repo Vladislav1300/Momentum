@@ -10,14 +10,44 @@
 </head>
 <body>
   <header class="header">
-    <div class="player">
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
+
+    <section class="player-section">
+      <div class="player">
+
+        <div class="timeline">
+          <div class="progress"></div>
+        </div>
+        <div class="player__inner">
+          <div class="player-controls">
+            <button class="play-prev player-icon"></button>
+            <button class="play player-icon"></button>
+            <button class="play-next player-icon"></button>
+          </div>
+    
+          <div class="song-time">
+            <div class="current">0:00</div>
+            <div class="divider">/</div>
+            <div class="length"></div>
+          </div>
+    
+          <div class="song-name">Music Song</div>
+    
+          <div class="volume-container">
+            <div class="volume-button">
+              <div class="volume"></div>
+            </div>
+            
+            <div class="volume-slider">
+              <div class="volume-percentage"></div>
+            </div>
+          </div>
+        </div> 
       </div>
       <ul class="play-list"></ul>
-    </div>
+
+    </section>
+    
+    
     <div class="weather">
       <input type="text" class="city" />
       <i class="weather-icon owf"></i>
