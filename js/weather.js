@@ -9,6 +9,7 @@ city.value = 'Minsk'
 
 async function getWeather(lang) {
   try {
+    // console.log(lang)
     weatherError.textContent = '';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${lang}&appid=fc626404cbb93fbcc728f17808cda98a&units=metric`;
     const res = await fetch(url);
@@ -28,7 +29,9 @@ async function getWeather(lang) {
     
   }
   catch {
-    weatherError.textContent = 'Error! City not found!';
+    if (lang === 'en') weatherError.textContent = 'Error! City not found!';
+    else weatherError.textContent = 'Ошибка! Город не найден';
+    
     temperature.textContent = '';
     weatherDescription.textContent = '';
     wind.textContent = '';
@@ -36,6 +39,6 @@ async function getWeather(lang) {
   }
     
 }
-getWeather('ru');
+getWeather(lang);
 
 city.addEventListener('change', getWeather);
