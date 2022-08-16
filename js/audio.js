@@ -58,6 +58,7 @@ setInterval(() => {
     progressBar.style.width = audio.currentTime / audio.duration * 100 + "%";
     document.querySelector(".song-time .current").textContent = getTimeCodeFromNum(audio.currentTime);
     time = audio.currentTime;
+    if(audio.currentTime === audio.duration) playNext();
   }, 500);
   // ------------------------------------------------------------------------------------
 

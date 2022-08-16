@@ -5,11 +5,13 @@ const weatherDescription = document.querySelector('.weather-description');
 const wind = document.querySelector('.wind');
 const city = document.querySelector('.city');
 const humidity = document.querySelector('.humidity');
-city.value = 'Minsk'
+city.value = 'Minsk';
+
 
 async function getWeather(lang) {
   try {
     // console.log(lang)
+
     weatherError.textContent = '';
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=${lang}&appid=fc626404cbb93fbcc728f17808cda98a&units=metric`;
     const res = await fetch(url);
